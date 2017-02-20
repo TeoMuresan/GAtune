@@ -1,0 +1,54 @@
+﻿<UserControl xmlns:my="clr-namespace:GAtune.UserControls"  x:Class="GAtune.UserControls.ScoreWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Loaded="ScoreWindow_Loaded" >
+
+    <StackPanel >
+    <Border  Background="Gainsboro"  Width="1248" Height="40">
+        <Grid >
+
+                <Button Name="Select" Width="30" Height="30" HorizontalAlignment="Center" Margin="-225,0,0,0"  Click="Select_Click" ToolTip="Selection II" >
+                    <Image Name="selectImage" Source="/Resources/App icons/scbtarrow.png"></Image>
+                </Button>
+                <Button Name="Play" Width="30" Height="30" HorizontalAlignment="Center" Margin="-150,0,0,0" Click="Play_Click" ToolTip="Play" >
+                    <Image  Source="/Resources/App icons/play.png"></Image>
+                </Button>
+                <Button Name="Stop"  Width="30" Height="30" HorizontalAlignment="Center" Margin="-75,0,0,0" Click="Stop_Click" ToolTip="Stop">
+                <Image  Source="/Resources/App icons/stop.png"></Image>
+            </Button>
+            <Button Name="Pause" Width="30" Height="30" HorizontalAlignment="Center" Margin="0,0,0,0" Click="Pause_Click" ToolTip="Pause">
+                <Image  Source="/Resources/App icons/pause.png"></Image>
+            </Button>
+                <Button Name="Shrink" Width="30" Height="30" HorizontalAlignment="Center" Margin="75,0,0,0" Click="Shrink_Click" ToolTip="Shrink" >
+                    <Image  Source="/Resources/App icons/scbtshrink.png"></Image>
+                </Button>
+                <Button Name="Expand" Width="30" Height="30" HorizontalAlignment="Center" Margin="150,0,0,0" Click="Expand_Click" ToolTip="Expand" >
+                    <Image  Source="/Resources/App icons/scbtexpand.png"></Image>
+                </Button>
+                <Button Name="AddEmptyBar" Width="30" Height="30" HorizontalAlignment="Center" Margin="225,0,0,0" Click="AddEmptyBar_Click" 
+                            ToolTip="Add empty bar">
+                    <Image Width="26" Height="26" Source="/Resources/App icons/empty-bar.png"></Image>
+                </Button>
+                <Button Name="ClearAll" Width="30" Height="30" HorizontalAlignment="Center" Margin="300,0,0,0" Click="ClearAll_Click" 
+                            ToolTip="Clear all">
+                    <Image  Source="/Resources/App icons/X-icon.png"></Image>
+                </Button>
+            </Grid>
+    </Border>
+    <Rectangle Name="topRectangle" Height="2" Fill="White" Width="1248"  DragOver="topRectangle_DragOver"
+                   AllowDrop="True"></Rectangle>
+    <ScrollViewer  Name="scoreScrollViewer" VerticalScrollBarVisibility="Visible" CanContentScroll="True" AllowDrop="True"
+                  Width="1248" Height="340"  Drop="scoreScrollViewer_Drop" DragEnter="scoreScrollViewer_DragEnter" KeyDown="scoreScrollViewer_KeyDown"
+                  PreviewMouseLeftButtonDown="scoreScrollViewer_PreviewMouseLeftButtonDown"
+                  PreviewMouseMove="scoreScrollViewer_PreviewMouseMove" ScrollChanged="scoreScrollViewer_ScrollChanged"
+               >
+        <WrapPanel Name="scoreWrapPanel" Orientation="Horizontal" >                               
+            </WrapPanel>           
+        </ScrollViewer>
+        <Rectangle Name="bottomRectangle" Fill="White" Height="2" Width="1248"  DragOver="bottomRectangle_DragOver"
+                   AllowDrop="True"></Rectangle>
+    </StackPanel>
+
+</UserControl>

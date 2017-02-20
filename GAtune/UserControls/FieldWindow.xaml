@@ -1,0 +1,61 @@
+﻿<UserControl xmlns:my="clr-namespace:GAtune.UserControls"  x:Class="GAtune.UserControls.FieldWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" 
+             Loaded="FieldWindow_Loaded" LostFocus="ChildWindow_LostFocus">
+
+    <Grid  HorizontalAlignment="Left" Name="fieldGrid" VerticalAlignment="Top" 
+           PreviewMouseLeftButtonDown="fieldGrid_PreviewMouseLeftButtonDown" PreviewMouseMove="fieldGrid_MouseMove">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="55" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="170" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="170" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="170" />
+        </Grid.RowDefinitions> 
+
+        <Grid.Resources>
+            <Style x:Key="ScoreStaffStyle" TargetType="my:ScoreStaffs">
+                <Setter Property="Width" Value="375"></Setter>
+                <Setter Property="Height" Value="162"></Setter>
+                <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+                <Setter Property="VerticalAlignment" Value="Top"></Setter>
+            </Style>
+            <Style TargetType="Control" x:Key="headerControls">
+                <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+                <Setter Property="VerticalAlignment" Value="Center"></Setter>                          
+            </Style>
+        </Grid.Resources>
+        
+        
+        <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Row="0"  Grid.ColumnSpan="4" 
+                Background="Beige">
+            <Label Style="{StaticResource headerControls}" Content="Next generation in "  />
+        </Border>
+        <Button Name="thisButton" Style="{StaticResource headerControls}" Content="this" Margin="50,0,0,0"  
+          Height="19" Width="40" Grid.Column="1" Click="thisButton_Click" />
+        <Label Style="{StaticResource headerControls}" FontWeight="Bold" Content=" / " Margin="85,0,0,0" Grid.Column="1"/>
+        <Button Name="newButton" Style="{StaticResource headerControls}" Content="new" Margin="105,0,33,0"
+          Height="19" Width="40" Grid.Column="1" Click="newButton_Click" />
+        <Label Style="{StaticResource headerControls}" Content="field" Grid.Column="1" Margin="145,0,0,0"/>
+        <Button Name="mutateButton" Style="{StaticResource headerControls}" Content="Mutate" Grid.Column="1" Margin="0,0,10,0"
+              HorizontalAlignment="Right"  Click="mutateButton_Click"/>          
+        <Image Grid.Row="1" Grid.Column="0" Width="20"  VerticalAlignment="Top" HorizontalAlignment="Left"
+               Source="/Resources/Score symbols/Others/Music-metronome.png"></Image>
+        <Label Name="tempoLabel" Grid.Row="1" Grid.Column="0"  Grid.RowSpan="2" Margin="20,4,0,165"></Label>
+    </Grid>
+
+
+
+</UserControl>

@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{904B875C-8E6D-4AB5-946F-0D66B26ACEBF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GAtune</RootNamespace>
+    <AssemblyName>GAtune</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WPF.MDI, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\WPF.MDI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Controllers\LayoutController.cs" />
+    <Compile Include="UserControls\FieldWindow.xaml.cs">
+      <DependentUpon>FieldWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ScoreStaffs.xaml.cs">
+      <DependentUpon>ScoreStaffs.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ScoreWindow.xaml.cs">
+      <DependentUpon>ScoreWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="UserControls\FieldWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ScoreStaffs.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ScoreWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GAlib\GAlib.csproj">
+      <Project>{44CBE62E-FF53-4A9B-B493-E6F522D52EFA}</Project>
+      <Name>GAlib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MidiNoteLib\MusicNoteLib.csproj">
+      <Project>{96FA2745-E854-441D-A47F-88D3CE82C901}</Project>
+      <Name>MusicNoteLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Score symbols\Note\16th-note.png" />
+    <Resource Include="Resources\Score symbols\Note\4th-note.png" />
+    <Resource Include="Resources\Score symbols\Note\8th-note.png" />
+    <Resource Include="Resources\Score symbols\Clef\Bass-clef.png" />
+    <Resource Include="Resources\Score symbols\Note\half-note.png" />
+    <Resource Include="Resources\Score symbols\Note\lower-16th-note.png" />
+    <Resource Include="Resources\Score symbols\Note\lower-4th-note.png" />
+    <Resource Include="Resources\Score symbols\Note\lower-8th-note.png" />
+    <Resource Include="Resources\Score symbols\Note\lower-half-note.png" />
+    <Resource Include="Resources\Score symbols\Clef\Treble-clef.png" />
+    <Resource Include="Resources\Score symbols\Note\whole-note.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Score symbols\Accidental\100px-flat.png" />
+    <Resource Include="Resources\Score symbols\Accidental\100px-natural.png" />
+    <Resource Include="Resources\Score symbols\Accidental\100px-sharp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Score symbols\Rest\10px-8th_rest.png" />
+    <Resource Include="Resources\Score symbols\Rest\13px-16th_rest.png" />
+    <Resource Include="Resources\Score symbols\Rest\30px-half_rest.png" />
+    <Resource Include="Resources\Score symbols\Rest\30px-whole_rest.png" />
+    <Resource Include="Resources\Score symbols\Rest\8px-4th_plain_rest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Score symbols\Dotted note\16th-note-dotted.png" />
+    <Resource Include="Resources\Score symbols\Dotted note\4th-note-dotted.png" />
+    <Resource Include="Resources\Score symbols\Dotted note\8th-note-dotted.png" />
+    <Resource Include="Resources\Score symbols\Dotted note\half-note-dotted.png" />
+    <Resource Include="Resources\Score symbols\Dotted note\lower-16th-note-dotted.png" />
+    <Resource Include="Resources\Score symbols\Dotted note\lower-4th-note-dotted.png" />
+    <Resource Include="Resources\Score symbols\Dotted note\lower-8th-note-dotted.png" />
+    <Resource Include="Resources\Score symbols\Dotted note\lower-half-note-dotted.png" />
+    <Resource Include="Resources\Score symbols\Dotted note\whole-note-dotted.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\App icons\field-speaker.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\App icons\lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\App icons\un_lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\App icons\arrow-left.png" />
+    <Resource Include="Resources\App icons\arrow-right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\App icons\undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Score symbols\Others\bar-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Score symbols\Key signature\Treble-A-flat-major_f-minor.png" />
+    <Resource Include="Resources\Score symbols\Key signature\Treble-A-major_f-sharp-minor.png" />
+    <Resource Include="Resources\Score symbols\Key signature\Treble-B-flat-major_g-minor.png" />
+    <Resource Include="Resources\Score symbols\Key signature\Treble-B-major_g-sharp-minor.png" />
+    <Resource Include="Resources\Score symbols\Key signature\Treble-C-flat-major_a-flat-minor.png" />
+    <Resource Include="Resources\Score symbols\Key signature\Treble-C-major_a-minor.png" />
+    <Resource Include="Resources\Score symbols\Key signature\Treble-C-sharp-major_a-sharp-minor.png" />
+    <Resource Include="Resources\Score symbols\Key signature\Treble-D-flat-major_b-flat-minor.png" />
+    <Resource Include="Resources\Score symbols\Key signature\Treble-D-major_b-minor.png" />
+    <Resource Include="Resources\Score symbols\Key signature\Treble-E-flat-major_c-minor.png" />
+    <Resource Include="Resources\Score symbols\Key signature\Treble-E-major_c-sharp-minor.png" />
+    <Resource Include="Resources\Score symbols\Key signature\Treble-F-major_d-minor.png" />
+    <Resource Include="Resources\Score symbols\Key signature\Treble-F-sharp-major_d-sharp-minor.png" />
+    <Resource Include="Resources\Score symbols\Key signature\Treble-G-flat-major_e-flat-minor.png" />
+    <Resource Include="Resources\Score symbols\Key signature\Treble-G-major_e-minor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Score symbols\Others\Music-metronome.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Score symbols\Key signature\Bass-C-sharp-major_a-sharp-minor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Score symbols\Key signature\Bass-A-flat-major_f-minor.png" />
+    <Resource Include="Resources\Score symbols\Key signature\Bass-A-major_f-sharp-minor.png" />
+    <Resource Include="Resources\Score symbols\Key signature\Bass-B-flat-major_g-minor.png" />
+    <Resource Include="Resources\Score symbols\Key signature\Bass-B-major_g-sharp-minor.png" />
+    <Resource Include="Resources\Score symbols\Key signature\Bass-C-flat-major_a-flat-minor.png" />
+    <Resource Include="Resources\Score symbols\Key signature\Bass-C-major_a-minor.png" />
+    <Resource Include="Resources\Score symbols\Key signature\Bass-D-flat-major_b-flat-minor.png" />
+    <Resource Include="Resources\Score symbols\Key signature\Bass-D-major_b-minor.png" />
+    <Resource Include="Resources\Score symbols\Key signature\Bass-E-flat-major_c-minor.png" />
+    <Resource Include="Resources\Score symbols\Key signature\Bass-E-major_c-sharp-minor.png" />
+    <Resource Include="Resources\Score symbols\Key signature\Bass-F-major_d-minor.png" />
+    <Resource Include="Resources\Score symbols\Key signature\Bass-F-sharp-major_d-sharp-minor.png" />
+    <Resource Include="Resources\Score symbols\Key signature\Bass-G-flat-major_e-flat-minor.png" />
+    <Resource Include="Resources\Score symbols\Key signature\Bass-G-major_e-minor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Score symbols\Dotted rest\10px-8th_rest-dotted.png" />
+    <Resource Include="Resources\Score symbols\Dotted rest\13px-16th_rest-dotted.png" />
+    <Resource Include="Resources\Score symbols\Dotted rest\30px-half_rest-dotted.png" />
+    <Resource Include="Resources\Score symbols\Dotted rest\30px-whole_rest-dotted.png" />
+    <Resource Include="Resources\Score symbols\Dotted rest\8px-4th_plain_rest-dotted.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\App icons\pause.png" />
+    <Resource Include="Resources\App icons\play.png" />
+    <Resource Include="Resources\App icons\stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\App icons\scbtexpand.png" />
+    <Resource Include="Resources\App icons\scbtshrink.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\App icons\scbtarrow.png" />
+    <Resource Include="Resources\App icons\scbtpalm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\aatitle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\App icons\empty-bar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="app icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\App icons\X-icon.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

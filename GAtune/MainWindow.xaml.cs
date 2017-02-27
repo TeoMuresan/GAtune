@@ -1329,11 +1329,18 @@ namespace GAtune
             }
         }
 
-        private void GAtuneManual_Click(object sender, RoutedEventArgs e)
+        private void QuickGuide_Click(object sender, RoutedEventArgs e)
         {
-            //System.Diagnostics.Process.Start("\\GAtune manual.pdf");
-            MessageBoxResult result = MessageBox.Show("Sorry, the manual is not available.",
-                    "GAtune", MessageBoxButton.OK);
+            string path = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            path += "\\..\\..\\..\\QuickGuide\\GAtune_Quick_Guide.pdf";
+            if (File.Exists(path))
+            {
+                System.Diagnostics.Process.Start(path);
+            }
+            else
+            {
+                MessageBoxResult result = MessageBox.Show("Sorry, file not found.", "GAtune", MessageBoxButton.OK);
+            }
         }
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
